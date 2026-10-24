@@ -26,7 +26,23 @@
       <h1>מפות שנוצרו<br><span>בישראל.</span></h1>
       <p>הגלריה תציג מפות שאושרו לפרסום. ההגשות אינן מופיעות כאן אוטומטית — כל אחת נבדקת לפני שהיא מתפרסמת.</p>
     </section>
-    <section class="gallery-empty empty-state">
+    <section class="gallery-toolbar" aria-label="חיפוש וסינון מפות" data-gallery-controls hidden>
+      <div class="gallery-filter">
+        <label for="gallery-day">סינון לפי יום</label>
+        <select id="gallery-day">
+          <option value="all">כל הימים</option>
+        </select>
+      </div>
+      <div class="gallery-filter">
+        <label for="gallery-search">חיפוש לפי כותרת או שם</label>
+        <input id="gallery-search" type="search" autocomplete="off">
+      </div>
+      <p id="gallery-count" class="gallery-count" aria-live="polite"></p>
+    </section>
+    <p id="gallery-status" class="gallery-status" role="status" aria-live="polite">טוענים את הגלריה…</p>
+    <section id="gallery-results" class="gallery-grid" aria-label="מפות שאושרו לפרסום" aria-busy="true"></section>
+    <noscript><p class="gallery-status">כדי לטעון ולסנן את הגלריה יש להפעיל JavaScript בדפדפן.</p></noscript>
+    <section id="gallery-empty" class="gallery-empty empty-state" hidden>
       <span class="empty-state-mark" aria-hidden="true">✳</span>
       <h2>הגלריה תיפתח עם ההגשות הראשונות</h2>
       <p>בינתיים אפשר לעיין בנושאי האתגר ולהתחיל לחשוב על המפה הבאה שלכם.</p>

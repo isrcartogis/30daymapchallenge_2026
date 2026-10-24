@@ -98,3 +98,144 @@ if (dayPage) {
     }
   }
 }
+
+function initializeGallery() {
+  const galleryResults = document.querySelector("#gallery-results");
+  if (galleryResults) {
+    const galleryControls = document.querySelector("[data-gallery-controls]");
+    const galleryDay = document.querySelector("#gallery-day");
+    const gallerySearch = document.querySelector("#gallery-search");
+    const galleryStatus = document.querySelector("#gallery-status");
+    const galleryCount = document.querySelector("#gallery-count");
+    const galleryEmpty = document.querySelector("#gallery-empty");
+    let galleryEntries = [];
+
+    galleryDay.addEventListener("change", renderGallery);
+    gallerySearch.addEventListener("input", renderGallery);
+
+    fetch("data/gallery.json", { cache: "no-cache" })
+      .then((response) => {
+        if (!response.ok) throw new Error("gallery feed request failed");
+        return response.json();
+      })
+      .then((feed) => {
+        if (!feed || feed.schemaVersion !== 1 || !Array.isArray(feed.entries)) {
+          throw new Error("gallery feed has an unsupported shape");
+        }
+        galleryEntries = feed.entries.filter(isPublicGalleryEntry);
+        if (!galleryEntries.length) {
+          galleryResults.hidden = true;
+          galleryEmpty.hidden = false;
+          galleryStatus.textContent = "";
+          galleryResults.setAttribute("aria-busy", "false");
+          return;
+        }
+
+        galleryControls.hidden = false;
+        const days = Array.from(new Set(galleryEntries.map((entry) => entry.day)))
+          .sort((left, right) => left - right);
+        days.forEach((day) => {
+          const option = document.createElement("option");
+          option.value = String(day);
+          option.textContent = `יום ${day} — ${galleryEntries.find((entry) => entry.day === day).theme}`;
+          galleryDay.append(option);
+        });
+        galleryResults.hidden = false;
+        galleryEmpty.hidden = true;
+        galleryResults.setAttribute("aria-busy", "false");
+        renderGallery();
+      })
+      .catch(() => {
+        galleryResults.setAttribute("aria-busy", "false");
+        galleryResults.hidden = true;
+        galleryResults.replaceChildren();
+        galleryStatus.textContent = "לא הצלחנו לטעון את הגלריה כרגע. נסו לרענן את העמוד.";
+        galleryStatus.dataset.state = "error";
+      });
+
+    function isPublicGalleryEntry(entry) {
+      return entry && typeof entry === "object" &&
+        Number.isInteger(entry.day) && entry.day >= 1 && entry.day <= 30 &&
+        typeof entry.title === "string" &&
+        (!entry.image || (typeof entry.image === "string" &&
+          /^assets\/gallery\/[A-F0-9]{32}-[A-F0-9]{40}\.(png|jpg|webp)$/i.test(entry.image))) &&
+        (!entry.url || (typeof entry.url === "string" && /^https:\/\/[^\s]+$/i.test(entry.url)));
+    }
+
+    function renderGallery() {
+      const selectedDay = galleryDay.value;
+      const query = gallerySearch.value.trim().toLocaleLowerCase();
+      const filtered = galleryEntries.filter((entry) => {
+        const matchesDay = selectedDay === "all" || String(entry.day) === selectedDay;
+        const haystack = [entry.title, entry.theme, entry.displayName, entry.description]
+          .filter(Boolean)
+          .join(" ")
+          .toLocaleLowerCase();
+        return matchesDay && (!query || haystack.includes(query));
+      });
+
+      galleryCount.textContent = `${filtered.length} ${filtered.length === 1 ? "מפה" : "מפות"}`;
+      galleryStatus.textContent = filtered.length ? "" : "לא נמצאו מפות שמתאימות לחיפוש.";
+      galleryResults.replaceChildren(...filtered.map(makeGalleryCard));
+    }
+
+    function makeGalleryCard(entry) {
+      const card = document.createElement("article");
+      card.className = "gallery-card";
+
+      if (entry.image) {
+        const image = document.createElement("img");
+        image.className = "gallery-image";
+        image.src = entry.image;
+        image.alt = entry.imageAltText || entry.title;
+        image.loading = "lazy";
+        card.append(image);
+      }
+
+      const content = document.createElement("div");
+      content.className = "gallery-card-content";
+      const day = document.createElement("p");
+      day.className = "gallery-day";
+      day.textContent = `יום ${entry.day} · ${entry.theme || ""}`;
+      const title = document.createElement("h2");
+      title.textContent = entry.title;
+      content.append(day, title);
+
+      if (entry.displayName) {
+        const creator = document.createElement("p");
+        creator.className = "gallery-creator";
+        creator.textContent = entry.displayName;
+        content.append(creator);
+      }
+      if (entry.description) {
+        const description = document.createElement("p");
+        description.className = "gallery-description";
+        description.textContent = entry.description;
+        content.append(description);
+      }
+      if (entry.credits) {
+        const credits = document.createElement("p");
+        credits.className = "gallery-credits";
+        credits.textContent = `קרדיט: ${entry.credits}`;
+        content.append(credits);
+      }
+      if (entry.url) {
+        const link = document.createElement("a");
+        link.className = "text-link gallery-link";
+        link.href = entry.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "לצפייה במפה";
+        const newTabNotice = document.createElement("span");
+        newTabNotice.className = "visually-hidden";
+        newTabNotice.textContent = " (נפתח בכרטיסייה חדשה)";
+        link.append(newTabNotice);
+        content.append(link);
+      }
+      card.append(content);
+      return card;
+    }
+  }
+}
+
+initializeGallery();

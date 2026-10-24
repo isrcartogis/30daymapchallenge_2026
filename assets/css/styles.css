@@ -925,6 +925,126 @@ p {
   min-height: 300px;
 }
 
+.gallery-toolbar {
+  align-items: end;
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  margin-bottom: 24px;
+  padding: 18px;
+}
+
+.gallery-filter {
+  display: grid;
+  flex: 1 1 220px;
+  gap: 6px;
+}
+
+.gallery-filter label {
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.gallery-filter select,
+.gallery-filter input {
+  background: white;
+  border: 1px solid #aebbb3;
+  border-radius: 7px;
+  color: var(--ink);
+  font: inherit;
+  min-height: 46px;
+  padding: 8px 11px;
+  width: 100%;
+}
+
+.gallery-filter select:focus-visible,
+.gallery-filter input:focus-visible {
+  outline: 3px solid #cb633e;
+  outline-offset: 3px;
+}
+
+.gallery-count {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.gallery-status {
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 14px 0 20px;
+}
+
+.gallery-status[data-state="error"] {
+  color: #9f2f27;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  margin-bottom: 42px;
+}
+
+.gallery-card {
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgb(27 48 44 / 6%);
+  overflow: hidden;
+}
+
+.gallery-image {
+  aspect-ratio: 4 / 3;
+  background: #e8e6db;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.gallery-card-content {
+  padding: 19px 20px 21px;
+}
+
+.gallery-day {
+  color: var(--green);
+  font-size: 0.88rem;
+  font-weight: 800;
+  margin-bottom: 7px;
+}
+
+.gallery-card h2 {
+  font-size: 1.3rem;
+  line-height: 1.35;
+  margin: 0 0 8px;
+}
+
+.gallery-creator,
+.gallery-description,
+.gallery-credits {
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0 0 9px;
+  overflow-wrap: anywhere;
+}
+
+.gallery-creator {
+  font-weight: 700;
+}
+
+.gallery-credits {
+  font-size: 0.88rem;
+}
+
+.gallery-link {
+  display: inline-block;
+  margin-top: 5px;
+}
+
 .submission-status {
   align-items: flex-start;
   background: #e8efdd;
