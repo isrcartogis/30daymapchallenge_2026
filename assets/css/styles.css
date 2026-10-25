@@ -124,6 +124,22 @@ summary:focus-visible {
   height: 18px;
 }
 
+.association-logo {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 44px;
+  justify-content: center;
+  width: 86px;
+}
+
+.association-logo img {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
 .main-nav {
   align-items: center;
   display: flex;
@@ -1159,6 +1175,11 @@ p {
 
   .brand {
     font-size: 1rem;
+  }
+
+  .association-logo {
+    height: 32px;
+    width: 62px;
   }
 
   .header-cta {
