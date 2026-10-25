@@ -1,15 +1,5 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-25T06:22:05.270Z",
-  "entries": [
-    {
-      "id": "9256FD6F2A734C95B13114E3A439FACE",
-      "day": 1,
-      "theme": "נקודות",
-      "title": "בדיקת פרסום — להסרה לאחר הבדיקה",
-      "displayName": "בדיקת מערכת",
-      "description": "פריט דמה לבדיקת תהליך הפרסום האוטומטי. אין בו מפה או מידע אישי.",
-      "url": "https://example.com/"
-    }
-  ]
+  "updatedAt": "2026-10-25T06:23:19.921Z",
+  "entries": []
 }
