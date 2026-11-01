@@ -168,7 +168,11 @@ function makeDayMapCard(entry) {
   content.className = "gallery-card-content";
   const title = document.createElement("h3");
   title.className = "day-map-title";
-  title.textContent = entry.title;
+  const titleLink = document.createElement("a");
+  titleLink.className = "gallery-title-link";
+  titleLink.href = mapDetailUrl(entry);
+  titleLink.textContent = entry.title;
+  title.append(titleLink);
   content.append(title);
   if (entry.displayName) {
     const creator = document.createElement("p");
@@ -188,12 +192,6 @@ function makeDayMapCard(entry) {
     credits.textContent = `קרדיט: ${entry.credits}`;
     content.append(credits);
   }
-
-  const detailLink = document.createElement("a");
-  detailLink.className = "text-link gallery-link";
-  detailLink.href = mapDetailUrl(entry);
-  detailLink.textContent = "לעמוד המפה המלא";
-  content.append(detailLink);
 
   card.append(content);
   return card;
@@ -413,12 +411,6 @@ function initializeGallery() {
         credits.textContent = `קרדיט: ${entry.credits}`;
         content.append(credits);
       }
-      const detailLink = document.createElement("a");
-      detailLink.className = "text-link gallery-link";
-      detailLink.href = mapDetailUrl(entry);
-      detailLink.textContent = "לעמוד המפה המלא";
-      content.append(detailLink);
-
       if (entry.url) {
         const link = document.createElement("a");
         link.className = "text-link gallery-link";
