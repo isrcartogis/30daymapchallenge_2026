@@ -784,6 +784,72 @@ p {
   padding-bottom: 34px;
 }
 
+.day-map-list {
+  display: grid;
+  gap: 22px;
+}
+
+.day-map-card {
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgb(27 48 44 / 6%);
+  overflow: hidden;
+}
+
+.day-map-frame {
+  background: #e8e6db;
+  position: relative;
+}
+
+.day-map-image,
+.day-map-embed {
+  aspect-ratio: 16 / 10;
+  border: 0;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  width: 100%;
+}
+
+.day-map-embed {
+  height: min(72vh, 760px);
+}
+
+.day-map-frame:fullscreen {
+  align-items: center;
+  background: #151917;
+  display: flex;
+  justify-content: center;
+  padding: 48px 12px 12px;
+}
+
+.day-map-frame:fullscreen .day-map-image,
+.day-map-frame:fullscreen .day-map-embed {
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.day-map-fullscreen {
+  inset-block-start: 10px;
+  inset-inline-start: 10px;
+  position: absolute;
+  z-index: 1;
+}
+
+.day-map-title {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+
+.day-map-open {
+  display: inline-block;
+  margin-top: 5px;
+}
+
 .empty-state {
   align-items: center;
   background: #eeece2;

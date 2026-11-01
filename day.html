@@ -46,10 +46,13 @@
       <div class="section-heading">
         <div><p class="eyebrow">הגלריה הישראלית</p><h2 id="day-gallery-heading">מפות היום</h2></div>
       </div>
-      <div class="empty-state">
+      <p class="gallery-status" data-day-gallery-status role="status" aria-live="polite">טוענים מפות שאושרו ליום הזה…</p>
+      <div class="day-map-list" data-day-maps aria-busy="true" hidden></div>
+      <div class="empty-state" data-day-empty hidden>
         <span class="empty-state-mark" aria-hidden="true">✳</span>
-        <h3>המקום של המפה שלכם מחכה כאן</h3>
-        <p>הגלריה תציג רק עבודות שאושרו לפרסום. אפשר להשתתף באתגר גם בלי לשלוח מפה לאתר.</p>
+        <h3>המפה הראשונה של היום עוד בדרך</h3>
+        <p>מפות יוצגו כאן לאחר בדיקה ואישור לפרסום. אפשר להשתתף באתגר גם בלי לשלוח מפה לאתר.</p>
+        <a class="button" data-day-empty-submit href="submit.html">הגשת מפה ליום הזה <span aria-hidden="true">←</span></a>
         <a class="text-link" href="gallery.html">על הגלריה ואישור מפות <span aria-hidden="true">←</span></a>
       </div>
     </section>

@@ -81,6 +81,8 @@ if (dayPage) {
     dayPage.querySelector("[data-day-title]").textContent = theme.title;
     dayPage.querySelector("[data-day-description]").textContent = theme.description;
     dayPage.querySelector("[data-day-submit]").href = `submit.html?day=${theme.day}`;
+    dayPage.querySelector("[data-day-empty-submit]").href = `submit.html?day=${theme.day}`;
+    initializeDayGallery(theme.day);
 
     const previous = dayPage.querySelector("[data-day-prev]");
     const next = dayPage.querySelector("[data-day-next]");
@@ -97,6 +99,183 @@ if (dayPage) {
       next.hidden = true;
     }
   }
+}
+
+function isPublicGalleryEntry(entry) {
+  if (!entry || typeof entry !== "object" ||
+      !Number.isInteger(entry.day) || entry.day < 1 || entry.day > 30 ||
+      typeof entry.title !== "string") {
+    return false;
+  }
+  const validImage = !entry.image || (typeof entry.image === "string" &&
+    /^assets\/gallery\/[A-F0-9]{32}-[A-F0-9]{40}\.(png|jpg|webp)$/i.test(entry.image));
+  if (!validImage || (!entry.image && !entry.url)) return false;
+  if (!entry.url) return true;
+
+  try {
+    return typeof entry.url === "string" &&
+      new URL(entry.url).protocol === "https:" &&
+      /^https:\/\/[^\s]+$/i.test(entry.url);
+  } catch (error) {
+    return false;
+  }
+}
+
+function initializeDayGallery(day) {
+  const mapList = document.querySelector("[data-day-maps]");
+  if (!mapList) return;
+
+  const status = document.querySelector("[data-day-gallery-status]");
+  const emptyState = document.querySelector("[data-day-empty]");
+  fetch("data/gallery.json", { cache: "no-cache" })
+    .then((response) => {
+      if (!response.ok) throw new Error("gallery feed request failed");
+      return response.json();
+    })
+    .then((feed) => {
+      if (!feed || feed.schemaVersion !== 1 || !Array.isArray(feed.entries)) {
+        throw new Error("gallery feed has an unsupported shape");
+      }
+
+      const entries = feed.entries.filter((entry) => isPublicGalleryEntry(entry) && entry.day === day);
+      mapList.setAttribute("aria-busy", "false");
+      status.textContent = "";
+      if (!entries.length) {
+        mapList.hidden = true;
+        emptyState.hidden = false;
+        return;
+      }
+
+      mapList.replaceChildren(...entries.map(makeDayMapCard));
+      mapList.hidden = false;
+      emptyState.hidden = true;
+    })
+    .catch(() => {
+      mapList.setAttribute("aria-busy", "false");
+      mapList.hidden = true;
+      status.textContent = "לא הצלחנו לטעון את מפות היום. נסו לרענן את העמוד.";
+      status.dataset.state = "error";
+    });
+}
+
+function makeDayMapCard(entry) {
+  const card = document.createElement("article");
+  card.className = "day-map-card";
+
+  const content = document.createElement("div");
+  content.className = "gallery-card-content";
+  const title = document.createElement("h3");
+  title.className = "day-map-title";
+  title.textContent = entry.title;
+  content.append(title);
+  if (entry.displayName) {
+    const creator = document.createElement("p");
+    creator.className = "gallery-creator";
+    creator.textContent = entry.displayName;
+    content.append(creator);
+  }
+  if (entry.description) {
+    const description = document.createElement("p");
+    description.className = "gallery-description";
+    description.textContent = entry.description;
+    content.append(description);
+  }
+  if (entry.credits) {
+    const credits = document.createElement("p");
+    credits.className = "gallery-credits";
+    credits.textContent = `קרדיט: ${entry.credits}`;
+    content.append(credits);
+  }
+
+  if (entry.image) {
+    const image = document.createElement("img");
+    image.className = "day-map-image";
+    image.src = entry.image;
+    image.alt = entry.imageAltText || entry.title;
+    image.loading = "lazy";
+    image.decoding = "async";
+    card.append(createFullscreenControl(image));
+
+    const imageLink = document.createElement("a");
+    imageLink.className = "text-link day-map-open";
+    imageLink.href = entry.image;
+    imageLink.target = "_blank";
+    imageLink.rel = "noopener noreferrer";
+    imageLink.textContent = "פתיחת התמונה בחלון חדש";
+    appendNewTabNotice(imageLink);
+    content.append(imageLink);
+  }
+
+  if (entry.url) {
+    const mapUrl = new URL(entry.url);
+    if (mapUrl.origin !== window.location.origin) {
+      const frame = document.createElement("iframe");
+      frame.className = "day-map-embed";
+      frame.src = mapUrl.href;
+      frame.title = `מפה אינטראקטיבית: ${entry.title}`;
+      frame.loading = "lazy";
+      frame.referrerPolicy = "no-referrer";
+      frame.setAttribute("allow", "fullscreen");
+      frame.setAttribute("allowfullscreen", "");
+      frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms");
+      card.append(createFullscreenControl(frame));
+    }
+
+    const link = document.createElement("a");
+    link.className = "text-link day-map-open";
+    link.href = mapUrl.href;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = mapUrl.origin === window.location.origin
+      ? "פתיחת המפה בחלון חדש"
+      : "פתיחת המפה המקורית בחלון חדש";
+    appendNewTabNotice(link);
+    content.append(link);
+  }
+
+  card.append(content);
+  return card;
+}
+
+function createFullscreenControl(media) {
+  const frame = document.createElement("div");
+  frame.className = "day-map-frame";
+  frame.append(media);
+
+  const fullscreenButton = document.createElement("button");
+  fullscreenButton.className = "button button-small day-map-fullscreen";
+  fullscreenButton.type = "button";
+  fullscreenButton.textContent = frame.requestFullscreen
+    ? "הצגה במסך מלא"
+    : "המסך המלא אינו נתמך בדפדפן זה";
+  fullscreenButton.disabled = !frame.requestFullscreen;
+  fullscreenButton.setAttribute("aria-label", "הצגת המפה במסך מלא");
+  fullscreenButton.addEventListener("click", async () => {
+    try {
+      if (document.fullscreenElement === frame) {
+        await document.exitFullscreen();
+      } else {
+        await frame.requestFullscreen();
+      }
+    } catch (error) {
+      fullscreenButton.textContent = "לא ניתן לפתוח מסך מלא. אפשר לפתוח בחלון חדש.";
+      fullscreenButton.title = error instanceof Error ? error.message : "בקשת המסך המלא נכשלה.";
+    }
+  });
+  document.addEventListener("fullscreenchange", () => {
+    fullscreenButton.textContent = document.fullscreenElement === frame
+      ? "יציאה ממסך מלא"
+      : "הצגה במסך מלא";
+  });
+  frame.append(fullscreenButton);
+  return frame;
+}
+
+function appendNewTabNotice(link) {
+  const notice = document.createElement("span");
+  notice.className = "visually-hidden";
+  notice.textContent = " (נפתח בכרטיסייה חדשה)";
+  link.append(notice);
 }
 
 function initializeGallery() {
@@ -152,15 +331,6 @@ function initializeGallery() {
         galleryStatus.textContent = "לא הצלחנו לטעון את הגלריה כרגע. נסו לרענן את העמוד.";
         galleryStatus.dataset.state = "error";
       });
-
-    function isPublicGalleryEntry(entry) {
-      return entry && typeof entry === "object" &&
-        Number.isInteger(entry.day) && entry.day >= 1 && entry.day <= 30 &&
-        typeof entry.title === "string" &&
-        (!entry.image || (typeof entry.image === "string" &&
-          /^assets\/gallery\/[A-F0-9]{32}-[A-F0-9]{40}\.(png|jpg|webp)$/i.test(entry.image))) &&
-        (!entry.url || (typeof entry.url === "string" && /^https:\/\/[^\s]+$/i.test(entry.url)));
-    }
 
     function renderGallery() {
       const selectedDay = galleryDay.value;
@@ -226,10 +396,7 @@ function initializeGallery() {
         link.target = "_blank";
         link.rel = "noopener noreferrer";
         link.textContent = "לצפייה במפה";
-        const newTabNotice = document.createElement("span");
-        newTabNotice.className = "visually-hidden";
-        newTabNotice.textContent = " (נפתח בכרטיסייה חדשה)";
-        link.append(newTabNotice);
+        appendNewTabNotice(link);
         content.append(link);
       }
       card.append(content);
