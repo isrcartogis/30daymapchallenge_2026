@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-02T20:08:57.346Z",
+  "updatedAt": "2026-11-02T20:19:07.161Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -44,6 +44,16 @@
       "description": "בשנת 2024 רצתי את מסלול חצי המרתון בדימונה (DMR).\r\nהמסלול עובר בשלל תצורות גאולוגיות מעניינות, אז כאיש מיפוי, חילקתי את המסלול לפי התצורות הגאולוגיות שבו.",
       "image": "assets/gallery/37E275BCE98A40D491471DFE27082B06-3332424babbc4f680940dad8d42edf808bfdcb4e.png",
       "imageAltText": "חלוקה של מסלול חצי מרתון לפי התצורות הגאולוגיות"
+    },
+    {
+      "id": "434E1AC771124A5CA1B84EFF5D10A9F6",
+      "day": 2,
+      "theme": "קווים",
+      "title": "עיר על עיר",
+      "displayName": "עיר על עיר",
+      "description": "אתר המאפשר להציג את קווי הרק\"ל והמטרו או שבילי האופניים של ערים בעולם על כל עיר בישראל",
+      "credits": "קלוד וכל מה שהוא מצא באינטרנט.\r\nקרדיט ל-osm וחברים",
+      "url": "https://claude.ai/artifact/GSdqaumhou9GjMmGCvQgzB#bike"
     },
     {
       "id": "42EE915E5E8C4E9D830EFA31D51B2BC8",
