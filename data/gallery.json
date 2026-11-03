@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-03T09:44:09.168Z",
+  "updatedAt": "2026-11-03T09:44:37.348Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -108,6 +108,16 @@
       "description": "משחק בשיטת joyplot - שילוב קווים עם רווחים שווים בינם, מוצלבים עם נתוני גובה, כך שיראו את הטופוגרפיה של השטח.",
       "image": "assets/gallery/ED78AB557A814E8EA31888CEF499D6FD-2e91008e508f00b3c3f514dd75c723ad0e1846d1.jpg",
       "imageAltText": "משחק בשיטת joyplot - שילוב קווים עם רווחים שווים בינם, מוצלבים עם נתוני גובה, כך שיראו את הטופוגרפיה של השטח."
+    },
+    {
+      "id": "03C251717D74497ABB14F104F366AE81",
+      "day": 3,
+      "theme": "פוליגונים",
+      "title": "יום הבוחר",
+      "displayName": "יום הבוחר - יניב נבון",
+      "description": "מפה שמתארת את תוצאות בחירות 2026 בישראל על גבי מפה תלת מימדית ופוליגונים",
+      "credits": "סקיליין מערכות תוכנה\r\nsentinel 2.0",
+      "url": "https://cloud.skylineglobe.com/sg/TEF/TE.html?project=https://cloud.skylineglobe.com/sg/ElectionIL2026/projects/Election2026.1494708"
     },
     {
       "id": "44DF014E629D458390F1DDDF01898D7B",
