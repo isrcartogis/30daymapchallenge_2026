@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-05T18:11:07.324Z",
+  "updatedAt": "2026-11-05T18:23:40.650Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -150,7 +150,9 @@
       "displayName": "יום הבוחר - יניב נבון",
       "description": "מפה שמתארת את תוצאות בחירות 2026 בישראל על גבי מפה תלת מימדית ופוליגונים",
       "credits": "סקיליין מערכות תוכנה\r\nsentinel 2.0",
-      "url": "https://cloud.skylineglobe.com/sg/TEF/TE.html?project=https://cloud.skylineglobe.com/sg/ElectionIL2026/projects/Election2026.1494708"
+      "url": "https://cloud.skylineglobe.com/sg/TEF/TE.html?project=https://cloud.skylineglobe.com/sg/ElectionIL2026/projects/Election2026.1494708",
+      "image": "assets/gallery/03C251717D74497ABB14F104F366AE81-e9b6a3bf8ff118af84aa355bc4c0a78cc1ea50e0.jpg",
+      "imageAltText": "מפה שמתארת את תוצאות בחירות 2026 בישראל על גבי מפה תלת מימדית ופוליגונים"
     },
     {
       "id": "44DF014E629D458390F1DDDF01898D7B",
