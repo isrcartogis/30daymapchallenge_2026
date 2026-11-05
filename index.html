@@ -7,8 +7,8 @@
   <meta name="description" content="אתגר המפות הישראלי 2026 — שלושים ימים, שלושים נושאים, קהילת מיפוי אחת.">
   <title>אתגר המפות הישראלי 2026</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261101-map-title-links">
-  <script src="assets/js/site.js?v=20261101-map-title-links" defer></script>
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261105-home-map-slideshow-v2">
+  <script src="assets/js/site.js?v=20261105-home-map-slideshow-v2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">דילוג לתוכן</a>
@@ -47,29 +47,21 @@
           <span>לא צריך חשבון Google</span>
         </div>
       </div>
-      <div class="hero-art" aria-label="איור מופשט של מפה עם קווים ונקודות" role="img">
-        <div class="map-paper">
-          <span class="map-label label-north">צפון</span>
-          <span class="map-label label-south">דרום</span>
-          <svg viewBox="0 0 520 420" role="presentation" aria-hidden="true">
-            <path class="contour contour-one" d="M44 94c63-54 116-12 166-32s85-47 140-23 100 1 142 31" />
-            <path class="contour contour-two" d="M24 137c57-48 111-5 163-28s91-47 144-21 99 4 151 28" />
-            <path class="contour contour-three" d="M20 180c70-39 105 2 159-18s94-43 150-18 89 8 156 25" />
-            <path class="contour contour-four" d="M30 225c59-30 96 9 151-8s99-38 154-14 96 11 149 22" />
-            <path class="contour contour-five" d="M50 271c48-22 83 14 136 2s106-31 160-9 94 17 129 23" />
-            <path class="route" d="M96 61c49 38 29 91 83 108s41 60 89 67 50 73 108 78" />
-            <path class="route route-secondary" d="M384 55c-30 44-81 35-94 84s-82 39-94 91-51 52-62 118" />
-            <circle class="map-point point-a" cx="96" cy="61" r="9" />
-            <circle class="map-point point-b" cx="179" cy="169" r="7" />
-            <circle class="map-point point-c" cx="268" cy="236" r="10" />
-            <circle class="map-point point-d" cx="376" cy="314" r="8" />
-            <circle class="map-point point-e" cx="384" cy="55" r="7" />
-            <circle class="map-point point-f" cx="196" cy="230" r="6" />
-          </svg>
-          <span class="map-stamp">ממפים<br>ביחד</span>
+      <div class="hero-slideshow" data-home-slideshow role="region"
+        aria-label="מפות שפורסמו בגלריה" aria-roledescription="קרוסלה" hidden>
+        <div class="hero-slide-stage" data-home-slide-stage></div>
+        <div class="hero-slide-caption" data-home-slide-caption></div>
+        <div class="hero-slideshow-controls">
+          <button class="hero-slide-control" type="button" data-home-previous
+            aria-label="הצגת המפה הקודמת">הקודמת</button>
+          <span class="hero-slide-count" data-home-slide-count></span>
+          <button class="hero-slide-control" type="button" data-home-next
+            aria-label="הצגת המפה הבאה">הבאה</button>
         </div>
-        <div class="art-caption"><span class="caption-line"></span> כל נקודה מתחילה סיפור</div>
       </div>
+      <p class="hero-slideshow-status" data-home-slideshow-status role="status" aria-live="polite">
+        טוענים מפות מהגלריה…
+      </p>
     </section>
 
     <section class="section-wrap section-block" aria-labelledby="featured-heading">

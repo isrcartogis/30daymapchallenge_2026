@@ -122,6 +122,152 @@ function isPublicGalleryEntry(entry) {
   }
 }
 
+function initializeHomeSlideshow() {
+  const slideshow = document.querySelector("[data-home-slideshow]");
+  if (!slideshow) return;
+
+  const status = document.querySelector("[data-home-slideshow-status]");
+  const stage = slideshow.querySelector("[data-home-slide-stage]");
+  const caption = slideshow.querySelector("[data-home-slide-caption]");
+  const count = slideshow.querySelector("[data-home-slide-count]");
+  const previous = slideshow.querySelector("[data-home-previous]");
+  const next = slideshow.querySelector("[data-home-next]");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let entries = [];
+  let currentIndex = 0;
+  let autoplayEnabled = !reducedMotion.matches;
+  let pointerInside = false;
+  let focusInside = false;
+  let timer = 0;
+
+  function showFallback(message) {
+    status.textContent = `${message} `;
+    const galleryLink = document.createElement("a");
+    galleryLink.href = "gallery.html";
+    galleryLink.textContent = "לעיון בגלריה";
+    status.append(galleryLink);
+    status.hidden = false;
+    slideshow.hidden = true;
+  }
+
+  function renderSlide() {
+    const entry = entries[currentIndex];
+    const slideLink = document.createElement("a");
+    slideLink.className = "hero-slide-link";
+    slideLink.href = mapDetailUrl(entry);
+    slideLink.setAttribute("aria-label", `פתיחת המפה: ${entry.title}, יום ${entry.day}`);
+
+    const image = document.createElement("img");
+    image.className = "hero-slide-image";
+    image.src = entry.image;
+    image.alt = entry.imageAltText || entry.title;
+    image.loading = "eager";
+    image.decoding = "async";
+    slideLink.append(image);
+    stage.replaceChildren(slideLink);
+
+    const title = document.createElement("a");
+    title.className = "hero-slide-title";
+    title.href = mapDetailUrl(entry);
+    title.textContent = entry.title;
+    const day = document.createElement("span");
+    day.className = "hero-slide-day";
+    day.textContent = `יום ${entry.day} · ${entry.theme || ""}`;
+    const metadata = document.createElement("div");
+    metadata.className = "hero-slide-metadata";
+    metadata.append(day);
+    if (entry.displayName) {
+      const creator = document.createElement("span");
+      creator.className = "hero-slide-creator";
+      creator.textContent = `מאת ${entry.displayName}`;
+      metadata.append(creator);
+    }
+    caption.replaceChildren(title, metadata);
+    count.textContent = `${currentIndex + 1} מתוך ${entries.length}`;
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % entries.length;
+    renderSlide();
+    syncAutoplay();
+  }
+
+  function showPrevious() {
+    currentIndex = (currentIndex - 1 + entries.length) % entries.length;
+    renderSlide();
+    syncAutoplay();
+  }
+
+  function syncAutoplay() {
+    window.clearInterval(timer);
+    timer = 0;
+    const shouldPlay = autoplayEnabled && !pointerInside && !focusInside &&
+      !document.hidden && entries.length > 1;
+    if (shouldPlay) timer = window.setInterval(showNext, 4000);
+  }
+
+  previous.addEventListener("click", () => {
+    autoplayEnabled = false;
+    showPrevious();
+  });
+  next.addEventListener("click", () => {
+    autoplayEnabled = false;
+    showNext();
+  });
+  slideshow.addEventListener("pointerenter", () => {
+    pointerInside = true;
+    syncAutoplay();
+  });
+  slideshow.addEventListener("pointerleave", () => {
+    pointerInside = false;
+    syncAutoplay();
+  });
+  slideshow.addEventListener("focusin", () => {
+    focusInside = true;
+    syncAutoplay();
+  });
+  slideshow.addEventListener("focusout", (event) => {
+    if (!slideshow.contains(event.relatedTarget)) {
+      focusInside = false;
+      syncAutoplay();
+    }
+  });
+  document.addEventListener("visibilitychange", syncAutoplay);
+  reducedMotion.addEventListener("change", (event) => {
+    if (event.matches) autoplayEnabled = false;
+    syncAutoplay();
+  });
+
+  fetch("data/gallery.json", { cache: "no-cache" })
+    .then((response) => {
+      if (!response.ok) throw new Error("gallery feed request failed");
+      return response.json();
+    })
+    .then((feed) => {
+      if (!feed || feed.schemaVersion !== 1 || !Array.isArray(feed.entries)) {
+        throw new Error("gallery feed has an unsupported shape");
+      }
+
+      entries = feed.entries
+        .filter((entry) => isPublicGalleryEntry(entry) && entry.image)
+        .sort((left, right) => left.day - right.day || left.title.localeCompare(right.title, "he"));
+      if (!entries.length) {
+        showFallback("מפות שפורסמו יופיעו כאן.");
+        return;
+      }
+
+      status.hidden = true;
+      slideshow.hidden = false;
+      previous.hidden = entries.length < 2;
+      next.hidden = entries.length < 2;
+      renderSlide();
+      syncAutoplay();
+    })
+    .catch(() => {
+      showFallback("לא הצלחנו לטעון את המפות מהגלריה.");
+    });
+}
+
 function initializeDayGallery(day) {
   const mapList = document.querySelector("[data-day-maps]");
   if (!mapList) return;
@@ -515,5 +661,6 @@ function makeMapDetail(entry) {
   return article;
 }
 
+initializeHomeSlideshow();
 initializeGallery();
 initializeMapDetail();
