@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-05T07:45:37.171Z",
+  "updatedAt": "2026-11-05T18:05:42.615Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -119,6 +119,17 @@
       "description": "משחק בשיטת joyplot - שילוב קווים עם רווחים שווים בינם, מוצלבים עם נתוני גובה, כך שיראו את הטופוגרפיה של השטח.",
       "image": "assets/gallery/ED78AB557A814E8EA31888CEF499D6FD-2e91008e508f00b3c3f514dd75c723ad0e1846d1.jpg",
       "imageAltText": "משחק בשיטת joyplot - שילוב קווים עם רווחים שווים בינם, מוצלבים עם נתוני גובה, כך שיראו את הטופוגרפיה של השטח."
+    },
+    {
+      "id": "EF6767D99D2343CE94640910A801AB01",
+      "day": 2,
+      "theme": "קווים",
+      "title": "Navigating the Pacific: Loggerhead Sea Turtle Migration",
+      "displayName": "DianaBogin",
+      "description": "מפה זו מציגה את מסלולי השחייה של 14 צבי ים חומים (Loggerhead) ברחבי צפון-מערב האוקיינוס השקט. נתוני המעקב הלווייני, מדגישים בצורה ויזואלית כיצד עליית טמפרטורות המים באוקיינוס בעקבות משבר האקלים, דוחפת את הצבים הללו להרחיב את אזורי חיפוש המזון שלהם צפונה יותר מבעבר.\r\nעריכה ועיצוב QGIS",
+      "credits": "צילום: מירון שגב. \r\nמבוסס על נתוני טלמטריה מתוך המחקר \"Marine bioresource conservation and restoration research\" מאת Il-Hun Kim ושות' (פורסם ב-PLoS ONE, 2024).",
+      "image": "assets/gallery/EF6767D99D2343CE94640910A801AB01-a6b706e1e48470c8411aabe424636e4336cabeac.jpg",
+      "imageAltText": "."
     },
     {
       "id": "2DFB29591EE04B68B3F5C4261341C9F6",
