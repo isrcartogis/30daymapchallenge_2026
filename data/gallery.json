@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-05T18:23:40.650Z",
+  "updatedAt": "2026-11-05T21:33:26.491Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -249,6 +249,17 @@
       "credits": "© OpenStreetMap contributors; elevation data: SRTM and NASA.",
       "image": "assets/gallery/5CC9BC8DF23145838B223ABF7E2EA705-1da1a1a90d2dbc255c71d2ccf5c50399d2275821.png",
       "imageAltText": "מפה טופוגרפית בגווני אפור של ירושלים, ועליה קווים דקים בצבעי אדום וכתום. שלושה ריבועים צבעוניים במפה הראשית תואמים לשלוש הגדלות בפינות, עם מסגרות טורקיז, סגול וכתום. המפה כוללת חץ צפון וקנה מידה."
+    },
+    {
+      "id": "451E34EEB5F04B88927FA2118D1440A4",
+      "day": 6,
+      "theme": "וינטג׳",
+      "title": "מפת ארץ ישראל 1946",
+      "displayName": "שלי אלבז וקלוד",
+      "description": "מפת \"Palestine Today\" משנת 1946, שולבה עם נתוני גובה בעזרת Claude.",
+      "credits": "מפה מקורית: ״Palestine Today״, בעריכת Meyer Breen, הוצאת Palmap, ניו יורק, 1946; הורדה של גרסה ברזולוציה גסה מאתר קדם. נתוני גובה: Copernicus DEM GLO-30, באמצעות Google Earth Engine. עיבוד: Claude",
+      "image": "assets/gallery/451E34EEB5F04B88927FA2118D1440A4-0daf58ac30228b1dae79c96cd1c234720629a69e.jpg",
+      "imageAltText": "מפת \"Palestine Today\" משנת 1946, שולבה עם נתוני גובה בעזרת Claude."
     }
   ]
 }
