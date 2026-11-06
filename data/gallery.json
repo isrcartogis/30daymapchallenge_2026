@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-05T21:33:26.491Z",
+  "updatedAt": "2026-11-06T06:29:59.195Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -260,6 +260,17 @@
       "credits": "מפה מקורית: ״Palestine Today״, בעריכת Meyer Breen, הוצאת Palmap, ניו יורק, 1946; הורדה של גרסה ברזולוציה גסה מאתר קדם. נתוני גובה: Copernicus DEM GLO-30, באמצעות Google Earth Engine. עיבוד: Claude",
       "image": "assets/gallery/451E34EEB5F04B88927FA2118D1440A4-0daf58ac30228b1dae79c96cd1c234720629a69e.jpg",
       "imageAltText": "מפת \"Palestine Today\" משנת 1946, שולבה עם נתוני גובה בעזרת Claude."
+    },
+    {
+      "id": "B7E143A26E3342CE8C752526ACCED571",
+      "day": 6,
+      "theme": "וינטג׳",
+      "title": "שיר העמק",
+      "displayName": "DianaBogin",
+      "description": "טל מלמטה ולבנה מעל,\r\nמבית אלפא עד נהלל.",
+      "credits": "עיצוב תקליט ראשוני  ב canva\r\nעריכת מפה ועיצוב סופי QGIS",
+      "image": "assets/gallery/B7E143A26E3342CE8C752526ACCED571-dec8ac530bf3b25d04977d24481493b49c56b436.jpg",
+      "imageAltText": "."
     }
   ]
 }
