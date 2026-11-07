@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-06T08:38:01.146Z",
+  "updatedAt": "2026-11-07T18:31:15.515Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -282,6 +282,17 @@
       "credits": "עיצוב תקליט ראשוני  ב canva\r\nעריכת מפה ועיצוב סופי QGIS",
       "image": "assets/gallery/B7E143A26E3342CE8C752526ACCED571-dec8ac530bf3b25d04977d24481493b49c56b436.jpg",
       "imageAltText": "."
+    },
+    {
+      "id": "46EE3633F1C9486D93474ECC4B8F7643",
+      "day": 7,
+      "theme": "מפה בעשר דקות",
+      "title": "10 דקות ברשת גאוגרפית ממקום מושבי",
+      "displayName": "10 דקות מסביבי",
+      "description": "מולטי רינג באפר של 10 דקות ממקום מושבי",
+      "credits": "מפת רקע: OpenStreetMap (OSM); יצירת טבעות מרחק (Multi-ring buffer): QGIS.",
+      "image": "assets/gallery/46EE3633F1C9486D93474ECC4B8F7643-3a5ab608233e86049f2dca04d4bde9e662dca752.jpg",
+      "imageAltText": "מולטי רינג באפר של 10 דקות ממקום מושבי"
     }
   ]
 }
