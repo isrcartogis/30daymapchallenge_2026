@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-07T18:31:15.515Z",
+  "updatedAt": "2026-11-07T19:04:07.484Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -293,6 +293,17 @@
       "credits": "מפת רקע: OpenStreetMap (OSM); יצירת טבעות מרחק (Multi-ring buffer): QGIS.",
       "image": "assets/gallery/46EE3633F1C9486D93474ECC4B8F7643-3a5ab608233e86049f2dca04d4bde9e662dca752.jpg",
       "imageAltText": "מולטי רינג באפר של 10 דקות ממקום מושבי"
+    },
+    {
+      "id": "311848613C744D1FBA1898911BB58DEC",
+      "day": 7,
+      "theme": "מפה בעשר דקות",
+      "title": "כלורופיל בים התיכון",
+      "displayName": "שלי אלבז",
+      "description": "המפה מציגה את ערכי השיא של כלורופיל-a בחופי הים התיכון (מדד עקיף לפיטופלנקטון), כפי שנקלט מלוויינים.",
+      "credits": "מקור הנתונים: Copernicus Marine, מוצר כלורופיל-a יומי רב־חיישני לים התיכון, ברזולוציה של 1 ק״מ. חישוב ערכי המקסימום ויצירת מפה ב-ArcGIS Pro",
+      "image": "assets/gallery/311848613C744D1FBA1898911BB58DEC-a657ac573382b6d423b611cc4da105a2dabf2f12.png",
+      "imageAltText": "המפה מציגה את ערכי השיא של כלורופיל-a בחופי הים התיכון (מדד עקיף לפיטופלנקטון), כפי שנקלט מלוויינים."
     }
   ]
 }
