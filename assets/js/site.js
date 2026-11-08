@@ -122,6 +122,10 @@ function isPublicGalleryEntry(entry) {
   }
 }
 
+function publicMapDescription(entry) {
+  return entry.accessibleDescription || entry.imageAltText || entry.description || "";
+}
+
 function initializeHomeSlideshow() {
   const slideshow = document.querySelector("[data-home-slideshow]");
   if (!slideshow) return;
@@ -160,7 +164,7 @@ function initializeHomeSlideshow() {
     const image = document.createElement("img");
     image.className = "hero-slide-image";
     image.src = entry.image;
-    image.alt = entry.imageAltText || entry.title;
+    image.alt = entry.imageAltText || entry.accessibleDescription || entry.title;
     image.loading = "eager";
     image.decoding = "async";
     slideLink.append(image);
@@ -326,10 +330,11 @@ function makeDayMapCard(entry) {
     creator.textContent = entry.displayName;
     content.append(creator);
   }
-  if (entry.description) {
+  const mapDescription = publicMapDescription(entry);
+  if (mapDescription) {
     const description = document.createElement("p");
     description.className = "gallery-description";
-    description.textContent = entry.description;
+    description.textContent = mapDescription;
     content.append(description);
   }
   if (entry.credits) {
@@ -351,7 +356,7 @@ function makeMapMedia(entry) {
     const image = document.createElement("img");
     image.className = "day-map-image";
     image.src = entry.image;
-    image.alt = entry.imageAltText || entry.title;
+    image.alt = entry.imageAltText || entry.accessibleDescription || entry.title;
     image.loading = "lazy";
     image.decoding = "async";
     media.append(createFullscreenControl(image));
@@ -500,7 +505,13 @@ function initializeGallery() {
       const query = gallerySearch.value.trim().toLocaleLowerCase();
       const filtered = galleryEntries.filter((entry) => {
         const matchesDay = selectedDay === "all" || String(entry.day) === selectedDay;
-        const haystack = [entry.title, entry.theme, entry.displayName, entry.description]
+        const haystack = [
+          entry.title,
+          entry.theme,
+          entry.displayName,
+          entry.description,
+          publicMapDescription(entry)
+        ]
           .filter(Boolean)
           .join(" ")
           .toLocaleLowerCase();
@@ -520,7 +531,7 @@ function initializeGallery() {
         const image = document.createElement("img");
         image.className = "gallery-image day-map-image";
         image.src = entry.image;
-        image.alt = entry.imageAltText || entry.title;
+        image.alt = entry.imageAltText || entry.accessibleDescription || entry.title;
         image.loading = "lazy";
         image.decoding = "async";
         card.append(createFullscreenControl(image));
@@ -545,10 +556,11 @@ function initializeGallery() {
         creator.textContent = entry.displayName;
         content.append(creator);
       }
-      if (entry.description) {
+      const mapDescription = publicMapDescription(entry);
+      if (mapDescription) {
         const description = document.createElement("p");
         description.className = "gallery-description";
-        description.textContent = entry.description;
+        description.textContent = mapDescription;
         content.append(description);
       }
       if (entry.credits) {
@@ -607,7 +619,8 @@ function initializeMapDetail() {
       page.querySelector("[data-map-page-title]").textContent = entry.title;
       const descriptionMeta = document.querySelector('meta[name="description"]');
       if (descriptionMeta) {
-        descriptionMeta.content = entry.description || `מפה מאושרת ליום ${entry.day}: ${entry.theme || ""}`;
+        descriptionMeta.content = publicMapDescription(entry) ||
+          `מפה מאושרת ליום ${entry.day}: ${entry.theme || ""}`;
       }
       status.hidden = true;
       result.replaceChildren(makeMapDetail(entry));
@@ -644,10 +657,11 @@ function makeMapDetail(entry) {
     creator.textContent = entry.displayName;
     header.append(creator);
   }
-  if (entry.description) {
+  const mapDescription = publicMapDescription(entry);
+  if (mapDescription) {
     const description = document.createElement("p");
     description.className = "gallery-description map-detail-description";
-    description.textContent = entry.description;
+    description.textContent = mapDescription;
     header.append(description);
   }
 
