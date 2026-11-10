@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-10T06:26:37.659Z",
+  "updatedAt": "2026-11-10T06:27:06.958Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -360,6 +360,18 @@
       "credits": "נתונים: תצלומי Sentinel-2 מה-2.11.26 (Copernicus, ESA). \r\nעיבוד: Python. מפה: ArcGIS Pro.",
       "image": "assets/gallery/0DBE8CAA57BF439581C95E8EAA373231-77114314a759b86325d8c8f26e1de1f62d1514f9.png",
       "imageAltText": "נופים עירוניים וכפריים מתצלומי Sentinel-2, עם עיבוד בהשראת ואן גוך"
+    },
+    {
+      "id": "825DCBA9ADBD4B81BD97E92442D066E1",
+      "day": 10,
+      "theme": "פרומפטים בלבד",
+      "title": "Trans-Europe Express",
+      "displayName": "ChatGPT (שלי אלבז)",
+      "description": "הפרומפט: צור מפה בהשראת השיר Trans-Europe Express של KRAFTWERK.\r\nהמפה צריכה להיות מינימליסטית, אלגנטית ולא עמוסה.\r\nפלטת הצבעים צריכה לשקף את הצבעים שיש באלבומים של ההרכב (אדום, שחור, לבן, תכלת)",
+      "accessibleDescription": "הפרומפט: צור מפה בהשראת השיר Trans-Europe Express של KRAFTWERK.\r\nהמפה צריכה להיות מינימליסטית, אלגנטית ולא עמוסה.\r\nפלטת הצבעים צריכה לשקף את הצבעים שיש באלבומים של ההרכב (אדום, שחור, לבן, תכלת)",
+      "credits": "ChatGPT",
+      "image": "assets/gallery/825DCBA9ADBD4B81BD97E92442D066E1-c5cb917c74daa367a3faa8e8a83825acd534dc58.png",
+      "imageAltText": "הפרומפט: צור מפה בהשראת השיר Trans-Europe Express של KRAFTWERK.\r\nהמפה צריכה להיות מינימליסטית, אלגנטית ולא עמוסה.\r\nפלטת הצבעים צריכה לשקף את הצבעים שיש באלבומים של ההרכב (אדום, שחור, לבן, תכלת)"
     }
   ]
 }
