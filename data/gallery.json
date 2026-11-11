@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-11T08:12:13.182Z",
+  "updatedAt": "2026-11-11T10:14:35.248Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -395,6 +395,18 @@
       "credits": "ChatGPT",
       "image": "assets/gallery/825DCBA9ADBD4B81BD97E92442D066E1-c5cb917c74daa367a3faa8e8a83825acd534dc58.png",
       "imageAltText": "הפרומפט: צור מפה בהשראת השיר Trans-Europe Express של KRAFTWERK.\r\nהמפה צריכה להיות מינימליסטית, אלגנטית ולא עמוסה.\r\nפלטת הצבעים צריכה לשקף את הצבעים שיש באלבומים של ההרכב (אדום, שחור, לבן, תכלת)"
+    },
+    {
+      "id": "EBC0A6A2B42C41EC90C0240DDBB82A87",
+      "day": 11,
+      "theme": "חושים: שמיעה",
+      "title": "Signal Vs. Noise",
+      "displayName": "שלי אלבז",
+      "description": "תאורת לילה מלוויין VIIRS ב-2019-2024.\r\nירוק מייצג רעש (תנודתיות קצרת טווח); כחול וכתום מייצגים את כיוון השינוי המתמשך (התעמעמות והתבהרות), לאורך התקופה.",
+      "accessibleDescription": "תאורת לילה מלוויין VIIRS ב-2019-2024.\r\nירוק מייצג רעש (תנודתיות קצרת טווח); כחול וכתום מייצגים את כיוון השינוי המתמשך (התעמעמות והתבהרות), לאורך התקופה.",
+      "credits": "מקור: תאורת לילה מלוויין VIIRS (2019-2024)\r\nניתוח: Google Earth Engine\r\nמפה: ArcGIS Pro",
+      "image": "assets/gallery/EBC0A6A2B42C41EC90C0240DDBB82A87-4e03ac68f5f7feddb19dc109bef0aa247bda39a5.png",
+      "imageAltText": "תאורת לילה מלוויין VIIRS ב-2019-2024.\r\nירוק מייצג רעש (תנודתיות קצרת טווח); כחול וכתום מייצגים את כיוון השינוי המתמשך (התעמעמות והתבהרות), לאורך התקופה."
     },
     {
       "id": "1141EFDBE2624BB09468E0AF20CA3B8D",
