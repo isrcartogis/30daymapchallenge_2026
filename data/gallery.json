@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-16T14:48:09.821Z",
+  "updatedAt": "2026-11-16T18:36:36.484Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -526,6 +526,18 @@
       "credits": "נתוני גובה: GEM-15 DTM — This dataset is produced by Google (CC BY 4.0); גבול ירושלים ונקודות העניין: © OpenStreetMap contributors (ODbL), באמצעות Overpass. עיבוד והדמיה: Python, GDAL, GeoPandas ו-Matplotlib; בסיוע Copilot.",
       "image": "assets/gallery/0E525BC042AB42188496166EDA9DCB91-1c11268904eb1dfa8202a35719e751f9e0cd580e.png",
       "imageAltText": "מפה עגולה על רקע כהה המציגה את ירושלים מלמטה בעדשת עין דג. נקודות שטח נצבעות מכחול בגבהים נמוכים לכתום בגבהים גבוהים. מסומנים הכנסת, העיר העתיקה, הדסה עין כרם, קניון מלחה ותחנת נבון, וליד כל אתר גובה הקרקע ומרחקו האופקי מהצנטרואיד. צפון למעלה ומזרח משמאל."
+    },
+    {
+      "id": "151CFDC399144D6DA1C34527F115ACB0",
+      "day": 15,
+      "theme": "מבפנים החוצה",
+      "title": "Mont Blanc - Inverted",
+      "displayName": "DianaBogin",
+      "description": "מפת המון בלאן, אבל עם טופוגרפיה הפוכה.",
+      "accessibleDescription": "מפת המון בלאן, אבל עם טופוגרפיה הפוכה.",
+      "credits": "עיבוד נתוני ועיצוב - בלנדר",
+      "image": "assets/gallery/151CFDC399144D6DA1C34527F115ACB0-aad94e04f1eb241affc88eca63942856e7412adc.png",
+      "imageAltText": "מפת המון בלאן, אבל עם טופוגרפיה הפוכה."
     }
   ]
 }
