@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-16T18:37:35.223Z",
+  "updatedAt": "2026-11-16T18:43:43.389Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -538,6 +538,19 @@
       "credits": "עיבוד נתוני ועיצוב - בלנדר",
       "image": "assets/gallery/151CFDC399144D6DA1C34527F115ACB0-aad94e04f1eb241affc88eca63942856e7412adc.png",
       "imageAltText": "מפת המון בלאן, אבל עם טופוגרפיה הפוכה."
+    },
+    {
+      "id": "FF8668B6236D41FBB64E7FF5394E1674",
+      "day": 16,
+      "theme": "מפה שיתופית",
+      "title": "מפת מעברי חצייה נדרשים בירושלים",
+      "displayName": "צוות מעברי חציה, צמתים ורמזורים (באמצעות עדו קליין)",
+      "description": "הנ\"ל תיעוד סטטוס מעברי החניה החסרים שמקדמת קבוצת \"צוות מעברי חציה, צמתים ורמזורים\" שפועלת בירושלים מאז 2021.",
+      "accessibleDescription": "במפה סטטוס של מעברי חציה לא קיימים או בשלבי התהוות בירושלים",
+      "credits": "חברי הקבוצה. לינק להצטרפות:\r\nhttps://chat.whatsapp.com/I8wQ6QioXMGCMWrzWg3khm",
+      "url": "https://script.google.com/macros/s/AKfycbxxGrJHGfy6S3tCMxHRYgRFO8sRXRBTQWlaSV31O4hVGkBoa9Su7DcQThFoXYcvNoMCvA/exec",
+      "image": "assets/gallery/FF8668B6236D41FBB64E7FF5394E1674-f84256a1ab13f959ca28bd9b1502701dad8e8f23.jpg",
+      "imageAltText": "במפה סטטוס של מעברי חציה לא קיימים או בשלבי התהוות בירושלים"
     },
     {
       "id": "218673ABB8A34448BA9F593B2422AE8B",
