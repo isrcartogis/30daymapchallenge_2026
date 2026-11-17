@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-17T18:59:42.907Z",
+  "updatedAt": "2026-11-17T19:41:52.486Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -563,6 +563,16 @@
       "credits": "עיצוב מפה: Blender",
       "image": "assets/gallery/218673ABB8A34448BA9F593B2422AE8B-fc90b852034b1de5d462f21a6feae4c2dd43dfd2.png",
       "imageAltText": "מפה מציגה את מודל בהירות שמי הלילה של פאלצ'י (Falchi et al), המשלב נתוני לוויין של נאס\"א עם מודל פיזיקלי של פיזור אור באטמוספירה. המדד מודד את עוצמת \"זוהר השמיים המלאכותי\" ביחס לחושך הטבעי, ומתורגם לסולם בורטל. בספטמבר 2017 הוכרז מכתש רמון כ\"שמורת אור כוכבים בינלאומית\" על ידי ארגון החושך הבינלאומי (DarkSky International / IDA)."
+    },
+    {
+      "id": "A416EC6A690448FEA1D3ACD20F9E4BF3",
+      "day": 17,
+      "theme": "אור וחושך",
+      "title": "שעת הזריחה לאורך השנה על פני כדה\"א בהתחשב באזורי זמן.",
+      "displayName": "עדו קליין עם copilot fusion",
+      "description": "במפה מוצגת אנימציה של שעת הזריחה בכל יום בשנה על כל תא של 10 על 10 דקות קשת בכדור הארץ.",
+      "accessibleDescription": "במפה מוצגת אנימציה של שעת הזריחה בכל יום בשנה על כל תא של 10 על 10 דקות קשת בכדור הארץ.",
+      "url": "https://drive.google.com/file/d/1rN3QN5sliZSpFsWMhZyLLzdDjhCrWBfj/view?usp=sharing"
     }
   ]
 }
