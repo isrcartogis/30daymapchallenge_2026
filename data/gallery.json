@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-23T08:24:27.278Z",
+  "updatedAt": "2026-11-23T08:25:20.084Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -619,6 +619,18 @@
       "accessibleDescription": "שריפות בישראל בשנים 2021–2026. כל משושה מייצג קמ\"ר. ככל שחלק גדול יותר ממנו נשרף, העמודה גבוהה ואדומה יותר",
       "credits": "נתונים: מיפוי שריפות מתמשך רט\"ג, מבוסס על הלוויין Sentinel-2",
       "url": "https://x.com/ShellyElbazZ/status/2122396901891027327?a=ovkyat0u_kUWbA9Vg-M&s=20"
+    },
+    {
+      "id": "9D900EC39319437A9DC9715DDD3C5ADF",
+      "day": 21,
+      "theme": "OpenStreetMap",
+      "title": "מחלף בן שמן",
+      "displayName": "שלי אלבז",
+      "description": "מחלף בן שמן מנתוני osm (לאחר עיבוד קל) בסגנון קלטי",
+      "accessibleDescription": "מחלף בן שמן מנתוני osm (לאחר עיבוד קל) בסגנון קלטי",
+      "credits": "נתונים: OSM",
+      "image": "assets/gallery/9D900EC39319437A9DC9715DDD3C5ADF-b37b4a87aff97f63d78b9ac78664eb3d9b338d04.png",
+      "imageAltText": "מחלף בן שמן מנתוני osm (לאחר עיבוד קל) בסגנון קלטי"
     }
   ]
 }
