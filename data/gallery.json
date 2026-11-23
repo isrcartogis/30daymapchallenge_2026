@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-23T08:25:20.084Z",
+  "updatedAt": "2026-11-23T08:26:04.109Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -631,6 +631,17 @@
       "credits": "נתונים: OSM",
       "image": "assets/gallery/9D900EC39319437A9DC9715DDD3C5ADF-b37b4a87aff97f63d78b9ac78664eb3d9b338d04.png",
       "imageAltText": "מחלף בן שמן מנתוני osm (לאחר עיבוד קל) בסגנון קלטי"
+    },
+    {
+      "id": "ABF88C7EAE854C6C94C37BD3D29D78D3",
+      "day": 22,
+      "theme": "היטלים",
+      "title": "Misfits Projections",
+      "displayName": "שלי אלבז",
+      "description": "גולגולת של להקת Misfits מדגימה עיוותים דרך 12 היטלים שונים",
+      "accessibleDescription": "גולגולת של להקת Misfits מדגימה עיוותים דרך 12 היטלים שונים",
+      "credits": "מפה מקורית מאתגר 2025: ArcGIS Pro;\r\nאנימציה: Claude",
+      "url": "https://x.com/ShellyElbazZ/status/2123682780542304356?a=DIxOJ0K827x-zob-pwM&s=20"
     }
   ]
 }
