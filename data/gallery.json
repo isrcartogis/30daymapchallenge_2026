@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-22T07:01:42.900Z",
+  "updatedAt": "2026-11-23T08:24:04.929Z",
   "entries": [
     {
       "id": "F935FB83B3B8472FADFB24664B7FA05A",
@@ -584,6 +584,18 @@
       "accessibleDescription": "מפה אינטראקטיבית שמבוססת בעיקר על נתוני הבנק העולמי ומראה איפה אין חוקים שמגנים על זכויות אדם, מפרספקטיבה שונה. \r\nאו במילים אחרות- איפה הכי כדאי פחות לגור אם אני אישה/גבר/ילד או חיה",
       "credits": "נתונים: הבנק העולמי, פירוט רחב יותר בתוך אתר המפה\r\nהכנת המפה: קלוד",
       "url": "https://claude.ai/artifact/HcYWmrtkPXZU8kL9xNrXLz#combined"
+    },
+    {
+      "id": "2D5E2B1445574958997716FCD594D9D0",
+      "day": 18,
+      "theme": "NULL — ערך ריק",
+      "title": "Null over Manicouagan",
+      "displayName": "שלי אלבז",
+      "description": "מאגר מניקואגן (קנדה), הדמאת Landsat שסווגה לשלוש קטגוריות: מים, לא מים ו-NULL (עננות, צל או אזורים מחוץ לאריח)",
+      "accessibleDescription": "מאגר מניקואגן (קנדה), הדמאת Landsat שסווגה לשלוש קטגוריות: מים, לא מים ו-NULL (עננות, צל או אזורים מחוץ לאריח)",
+      "credits": "נתונים: Landsat 8 (USGS/NASA); ניתוח: Google Earth Engine; מפה: ArcGIS Pro",
+      "image": "assets/gallery/2D5E2B1445574958997716FCD594D9D0-178c928fa040fddaa5d2a81ef83a8449bb82f102.png",
+      "imageAltText": "מאגר מניקואגן (קנדה), הדמאת Landsat שסווגה לשלוש קטגוריות: מים, לא מים ו-NULL (עננות, צל או אזורים מחוץ לאריח)"
     },
     {
       "id": "023D7FC21C0C417D983EFE4B764C3252",
